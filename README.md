@@ -37,7 +37,7 @@ Note that tab completion is available for project names.
 Dependencies
 ============
 
-* [Fish shell](http://fishshell.com/) ([interested in a bash/zsh version?](issues))
+* [Fish shell](http://fishshell.com/) ([interested in a bash/zsh version?](https://github.com/dickeyxxx/g/issues))
 * [hub](https://hub.github.com/)
 
 Installation
