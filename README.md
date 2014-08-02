@@ -1,13 +1,13 @@
 Local GitHub Navigator
 ======================
 
-g allows you to very quickly navigate between GitHub project cloned on your
+gh allows you to very quickly navigate between GitHub project cloned on your
 local box. It will `cd` into project directories quickly and clone repos that do
 not exist.
 
 Here is a demo of me moving around various projects
 
-![demo](g.gif)
+![demo](gh.gif)
 
 Usage
 =====
@@ -15,19 +15,19 @@ Usage
 Go to `~/src/github.com/dickeyxxx`
 
 ```
-g
+gh
 ```
 
 Go to `~/src/github.com/dickeyxxx/myrepo`
 
 ```
-g myrepo
+gh myrepo
 ```
 
 Go to `~/src/github.com/otheruser/repo`
 
 ```
-g otheruser repo
+gh otheruser repo
 ```
 
 If it does not already exist it will be cloned.
@@ -37,7 +37,7 @@ Note that tab completion is available for project names.
 Dependencies
 ============
 
-* [Fish shell](http://fishshell.com/) ([interested in a bash/zsh version?](https://github.com/dickeyxxx/g/issues))
+* [Fish shell](http://fishshell.com/) ([interested in a bash/zsh version?](https://github.com/dickeyxxx/gh/issues))
 * [hub](https://hub.github.com/)
 
 Installation
@@ -49,7 +49,7 @@ Add this environment variable for your GitHub username
 
 Then symlink (or copy) the function into `$fish_function_path`
 
-    ln -s ~/src/github.com/dickeyxxx/g/g.fish ~/.config/fish/functions/g.fish
+    ln -s ~/src/github.com/dickeyxxx/gh/gh.fish ~/.config/fish/functions/gh.fish
 
 Go developers
 =============
