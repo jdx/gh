@@ -47,12 +47,12 @@ Add this environment variable for your GitHub username:
 
     set -U GITHUB dickeyxxx
 
-Then copy the function into `$fish_function_path`:
+Then symlink (or copy) the function into `$fish_function_path`:
 
-    cp ~/src/github.com/dickeyxxx/g/g.fish ~/.config/fish/functions/g.fish
+    ln -s ~/src/github.com/dickeyxxx/g/g.fish ~/.config/fish/functions/g.fish
 
 Go developers
 =============
 
 This follows the standard convention for Go projects so long as you have your
-`GOHOME` set to `~`
+`GOHOME` set to `~`.
