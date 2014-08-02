@@ -5,26 +5,26 @@ g allows you to very quickly navigate between GitHub project cloned on your
 local box. It will `cd` into project directories quickly and clone repos that do
 not exist.
 
-Here is a demo of me moving around various projects:
+Here is a demo of me moving around various projects
 
 ![demo](g.gif)
 
 Usage
 =====
 
-Go to `~/src/github.com/dickeyxxx`:
+Go to `~/src/github.com/dickeyxxx`
 
 ```
 g
 ```
 
-Go to `~/src/github.com/dickeyxxx/myrepo`:
+Go to `~/src/github.com/dickeyxxx/myrepo`
 
 ```
 g myrepo
 ```
 
-Go to `~/src/github.com/otheruser/repo`:
+Go to `~/src/github.com/otheruser/repo`
 
 ```
 g otheruser repo
@@ -43,11 +43,11 @@ Dependencies
 Installation
 ============
 
-Add this environment variable for your GitHub username:
+Add this environment variable for your GitHub username
 
     set -U GITHUB dickeyxxx
 
-Then symlink (or copy) the function into `$fish_function_path`:
+Then symlink (or copy) the function into `$fish_function_path`
 
     ln -s ~/src/github.com/dickeyxxx/g/g.fish ~/.config/fish/functions/g.fish
 
