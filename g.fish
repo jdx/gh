@@ -25,7 +25,7 @@ function g
 end
 
 function __g_user_completion
-  ls $HOME/src/github.com
+  ls $HOME/src/github.com/$GITHUB
 end
 
 function __g_repo_completion
