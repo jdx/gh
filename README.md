@@ -47,9 +47,10 @@ Add this environment variable for your GitHub username
 
     set -U GITHUB dickeyxxx
 
-Then symlink (or copy) the function into `$fish_function_path`
+Then symlink (or copy) the function and completion files into `$fish_function_path` and `$fish_complete_path`
 
-    ln -s ~/src/github.com/dickeyxxx/gh/gh.fish ~/.config/fish/functions/gh.fish
+    ln -s ~/src/github.com/dickeyxxx/gh/fish/functions/gh.fish ~/.config/fish/functions/gh.fish
+    ln -s ~/src/github.com/dickeyxxx/gh/fish/completions/gh.fish ~/.config/fish/completions/gh.fish
 
 Go developers
 =============
