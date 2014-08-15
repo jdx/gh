@@ -1,5 +1,5 @@
 function __gh_user_completion
-  ls $HOME/src/github.com/$GITHUB
+  ls $HOME/src/github.com
 end
 
 function __gh_repo_completion
