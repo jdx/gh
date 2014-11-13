@@ -37,11 +37,13 @@ Note that tab completion is available for project names.
 Dependencies
 ============
 
-* [Fish shell](http://fishshell.com/) ([interested in a bash/zsh version?](https://github.com/dickeyxxx/gh/issues))
-* [hub](https://hub.github.com/)
+* [Fish shell](http://fishshell.com/) ([interested in a bash version?](https://github.com/dickeyxxx/gh/issues))
+OR
+* [OH-MY-ZSH](http://ohmyz.sh/)
 
-Installation
-============
+
+Installation For Fish
+=====================
 
 Add this environment variable for your GitHub username
 
@@ -51,6 +53,36 @@ Then symlink (or copy) the function and completion files into `$fish_function_pa
 
     ln -s ~/src/github.com/dickeyxxx/gh/fish/functions/gh.fish ~/.config/fish/functions/gh.fish
     ln -s ~/src/github.com/dickeyxxx/gh/fish/completions/gh.fish ~/.config/fish/completions/gh.fish
+
+Installation For Oh-My-ZSH
+==========================
+
+Add this environment variable for your GitHub username
+
+    typeset +gx -A GITHUB
+    GITHUB[user]=dickeyxxx
+
+Then symlink (or copy) the gh folder into your Oh-My-ZSH plugins folder
+    
+    ln -s ~/src/github.com/dickeyxxx/gh/zsh/gh ~/.oh-my-zsh/custom/plugins/gh
+
+Next add the plugin to your `~/.zshrc` file
+    
+    `plugins=(gh)`
+
+For example:
+    
+```
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+plugins=(git brew meteor node npm osx redis-cli sublime gh)
+
+```
+
+Finally reload the `~/.zshrc` file:
+
+    `source ~/.zshrc`
 
 Go developers
 =============

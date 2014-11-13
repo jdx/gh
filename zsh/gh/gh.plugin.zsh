@@ -3,7 +3,7 @@
 #Requires hub to download github repositories that are not already cloned
 
 function gh () {
-  typeset +x account=$GITHUB
+  typeset +x account=$GITHUB[user]
   typeset +x repo=""
 
   if (( ${+argv[2]} )); then
@@ -18,7 +18,7 @@ function gh () {
 
   typeset +x directory=$HOME/src/github.com/$account/$repo
   if [[ ! -a $directory ]]; then
-    git clone https://github.com/$account/$repo $directory
+    git clone git@github.com:$account/$repo $directory
     if [[ ! -a $directory ]]; then
       return 127
     fi
