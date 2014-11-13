@@ -18,7 +18,7 @@ function gh () {
 
   typeset +x directory=$HOME/src/github.com/$account/$repo
   if [[ ! -a $directory ]]; then
-    hub clone -p $account/$repo $directory
+    git clone https://github.com/$account/$repo $directory
     if [[ ! -a $directory ]]; then
       return 127
     fi
