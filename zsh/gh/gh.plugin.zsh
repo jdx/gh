@@ -5,7 +5,7 @@
 function gh () {
   typeset +x account=$GITHUB
   typeset +x repo=""
-      arr=( foo bar baz)
+
   if (( ${+argv[2]} )); then
     repo=$argv[2]
     account=$argv[1]
