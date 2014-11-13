@@ -18,7 +18,7 @@ function gh
 
   set -l path $HOME/src/github.com/$user/$repo
   if not test -d $path
-    hub clone -p $user/$repo $path
+    git clone https://github.com/$user/$repo $path
   end
 
   cd $path
