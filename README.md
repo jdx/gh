@@ -37,9 +37,7 @@ Note that tab completion is available for project names.
 Dependencies
 ============
 
-* [Fish shell](http://fishshell.com/) ([interested in a bash version?](https://github.com/dickeyxxx/gh/issues))
-OR
-* [OH-MY-ZSH](http://ohmyz.sh/)
+* [Fish shell](http://fishshell.com/) ([interested in a bash version?](https://github.com/dickeyxxx/gh/issues)) OR [OH-MY-ZSH](http://ohmyz.sh/)
 
 
 Installation For Fish
@@ -68,7 +66,7 @@ Then symlink (or copy) the gh folder into your Oh-My-ZSH plugins folder
 
 Next add the plugin to your `~/.zshrc` file
     
-    `plugins=(gh)`
+    plugins=(gh)
 
 For example:
     
@@ -82,7 +80,7 @@ plugins=(git brew meteor node npm osx redis-cli sublime gh)
 
 Finally reload the `~/.zshrc` file:
 
-    `source ~/.zshrc`
+    source ~/.zshrc
 
 Go developers
 =============
