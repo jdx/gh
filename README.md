@@ -7,7 +7,7 @@ not exist.
 
 Here is a demo of me moving around various projects
 
-![demo](gh.gif)
+![demo](demo.gif)
 
 Usage
 =====
