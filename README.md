@@ -5,6 +5,8 @@ gh allows you to very quickly navigate between GitHub project cloned on your
 local box. It will `cd` into project directories quickly and clone repos that do
 not exist.
 
+There is a lot of mental overhead trying to manage a custom `~/src` directory with your projects. I tried managing by work/personal, programming language, even tried a different directory for each month. I found by simply making your projects path reflect GitHub, it was much easier to remember where things were.
+
 Here is a demo of me moving around various projects
 
 ![demo](demo.gif)
