@@ -1,7 +1,5 @@
 #Github repo switcher
 
-#Requires hub to download github repositories that are not already cloned
-
 function gh () {
   typeset +x account=$GITHUB[user]
   typeset +x repo=""
