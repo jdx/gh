@@ -12,27 +12,15 @@ Here is a demo of me moving around various projects
 Usage
 =====
 
-Go to `~/src/github.com/dickeyxxx`
+Clone and/or go to `~/src/github.com/githubuser/githubrepo`.
 
 ```
-gh
+gh githubuser githubrepo
 ```
 
-Go to `~/src/github.com/dickeyxxx/myrepo`
+It'll either just be a `cd` or it will clone `git@github.com:githubuser:githubrepo.git`
 
-```
-gh myrepo
-```
-
-Go to `~/src/github.com/otheruser/repo`
-
-```
-gh otheruser repo
-```
-
-If it does not already exist it will be cloned.
-
-Note that tab completion is available for project names.
+Note that tab completion is available for project and usernames.
 
 Dependencies
 ============
