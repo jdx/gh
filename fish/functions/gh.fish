@@ -4,7 +4,7 @@ function gh
 
   switch (count $argv)
   case 0
-    cd $HOME/src/github.com/$user
+    cd "$HOME/src/github.com/$user"
     return
   case 1
     set repo $argv[1]
