@@ -5,50 +5,6 @@ gh allows you to very quickly navigate between GitHub project cloned on your
 local box. It will `cd` into project directories quickly and clone repos that do
 not exist.
 
-<<<<<<< HEAD
-Here is a demo of me moving around various projects
-
-![demo](gh.gif)
-
-Usage
-=====
-
-Go to `~/src/github.com/dickeyxxx`
-
-```
-gh
-```
-
-Go to `~/src/github.com/dickeyxxx/myrepo`
-
-```
-gh myrepo
-```
-
-Go to `~/src/github.com/otheruser/repo`
-
-```
-gh otheruser repo
-```
-
-If it does not already exist it will be cloned.
-
-Note that tab completion is available for project names.
-
-Dependencies
-============
-
-* [Fish shell](http://fishshell.com/) ([interested in a bash version?](https://github.com/dickeyxxx/gh/issues)) OR [OH-MY-ZSH](http://ohmyz.sh/)
-
-
-Installation For Fish
-=====================
-
-Add this environment variable for your GitHub username
-
-    set -U GITHUB dickeyxxx
-
-=======
 There is a lot of mental overhead trying to manage a custom `~/src` directory with your projects. I tried managing by work/personal, programming language, even tried a different directory for each month. I found by simply making your projects path reflect GitHub, it was much easier to remember where things were.
 
 Here is a demo of me moving around various projects
@@ -81,7 +37,6 @@ Add this environment variable for your GitHub username
 
     set -U GITHUB dickeyxxx
 
->>>>>>> d083660bdf429ee1c748dc2272a79eefdc148f90
 Then symlink (or copy) the function and completion files into `$fish_function_path` and `$fish_complete_path`
 
     ln -s ~/src/github.com/dickeyxxx/gh/fish/functions/gh.fish ~/.config/fish/functions/gh.fish
@@ -96,15 +51,15 @@ Add this environment variable for your GitHub username
     GITHUB[user]=dickeyxxx
 
 Then symlink (or copy) the gh folder into your Oh-My-ZSH plugins folder
-    
+
     ln -s ~/src/github.com/dickeyxxx/gh/zsh/gh ~/.oh-my-zsh/custom/plugins/gh
 
 Next add the plugin to your `~/.zshrc` file
-    
+
     plugins=(gh)
 
 For example:
-    
+
 ```
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
