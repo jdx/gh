@@ -1,7 +1,5 @@
 #Github repo switcher
 
-#Requires hub to download github repositories that are not already cloned
-
 function gh () {
   typeset +x account=$GITHUB[user]
   typeset +x repo=""
@@ -18,7 +16,7 @@ function gh () {
 
   typeset +x directory=$HOME/src/github.com/$account/$repo
   if [[ ! -a $directory ]]; then
-    git clone git@github.com:$account/$repo $directory
+    git clone git@github.com:$account/$repo.git $directory
     if [[ ! -a $directory ]]; then
       return 127
     fi

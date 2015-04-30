@@ -4,7 +4,7 @@ function gh
 
   switch (count $argv)
   case 0
-    cd $HOME/src/github.com/$user
+    cd "$HOME/src/github.com/$user"
     return
   case 1
     set repo $argv[1]
@@ -18,7 +18,7 @@ function gh
 
   set -l path $HOME/src/github.com/$user/$repo
   if not test -d $path
-    git clone git@github.com:$user/$repo $path
+    git clone git@github.com:$user/$repo.git $path
   end
 
   cd $path

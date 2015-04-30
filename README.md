@@ -5,6 +5,7 @@ gh allows you to very quickly navigate between GitHub project cloned on your
 local box. It will `cd` into project directories quickly and clone repos that do
 not exist.
 
+<<<<<<< HEAD
 Here is a demo of me moving around various projects
 
 ![demo](gh.gif)
@@ -47,6 +48,40 @@ Add this environment variable for your GitHub username
 
     set -U GITHUB dickeyxxx
 
+=======
+There is a lot of mental overhead trying to manage a custom `~/src` directory with your projects. I tried managing by work/personal, programming language, even tried a different directory for each month. I found by simply making your projects path reflect GitHub, it was much easier to remember where things were.
+
+Here is a demo of me moving around various projects
+
+![demo](demo.gif)
+
+Usage
+=====
+
+Clone and/or go to `~/src/github.com/githubuser/githubrepo`.
+
+```
+gh githubuser githubrepo
+```
+
+It'll either just be a `cd` or it will clone `git@github.com:githubuser:githubrepo.git`
+
+Note that tab completion is available for project and usernames.
+
+Dependencies
+============
+
+* [Fish shell](http://fishshell.com/) ([interested in a bash version?](https://github.com/dickeyxxx/gh/issues)) OR [OH-MY-ZSH](http://ohmyz.sh/)
+
+
+Installation For Fish
+=====================
+
+Add this environment variable for your GitHub username
+
+    set -U GITHUB dickeyxxx
+
+>>>>>>> d083660bdf429ee1c748dc2272a79eefdc148f90
 Then symlink (or copy) the function and completion files into `$fish_function_path` and `$fish_complete_path`
 
     ln -s ~/src/github.com/dickeyxxx/gh/fish/functions/gh.fish ~/.config/fish/functions/gh.fish
