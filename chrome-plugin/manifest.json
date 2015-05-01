@@ -1,0 +1,16 @@
+{
+  "manifest_version": 2,
+  "name": "GH",
+  "description": "Extension for GH, clone to ~/src/github.com/* straight from Github",
+  "version": "1.0",
+  "content_scripts": [
+    {
+      "matches": ["https://github.com/*"],
+      "js": ["jquery.min.js", "gh.js"]
+    }
+  ],
+  "permissions": [
+    "activeTab",
+    "https://github.com/"
+  ]
+}
