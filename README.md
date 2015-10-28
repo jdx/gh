@@ -76,4 +76,4 @@ Go developers
 =============
 
 This follows the standard convention for Go projects so long as you have your
-`GOHOME` set to `~`
+`GOPATH` set to `~`
