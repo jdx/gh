@@ -1,5 +1,5 @@
-Local GitHub Navigator
-======================
+gh
+==
 
 gh allows you to very quickly navigate between GitHub project cloned on your
 local box. It will `cd` into project directories quickly and clone repos that do
@@ -20,7 +20,7 @@ Clone and/or go to `~/src/github.com/githubuser/githubrepo`.
 gh githubuser githubrepo
 ```
 
-It'll either just be a `cd` or it will clone `git@github.com:githubuser:githubrepo.git`
+It'll either just be a `cd` or it will clone `git@github.com:githubuser/githubrepo.git`
 
 Note that tab completion is available for project and usernames.
 
@@ -33,19 +33,17 @@ Dependencies
 Installation For Fish
 =====================
 
-Add this environment variable for your GitHub username
+Symlink (or copy) the function and completion files into `$fish_function_path` and `$fish_complete_path`
 
-    set -U GITHUB dickeyxxx
-
-Then symlink (or copy) the function and completion files into `$fish_function_path` and `$fish_complete_path`
-
+    mkdir -p ~/src/github.com/dickeyxxx
+    git clone git@github.com:dickeyxxx/gh.git ~/src/github.com/dickeyxxx/gh
     ln -s ~/src/github.com/dickeyxxx/gh/fish/functions/gh.fish ~/.config/fish/functions/gh.fish
     ln -s ~/src/github.com/dickeyxxx/gh/fish/completions/gh.fish ~/.config/fish/completions/gh.fish
 
 Installation For Oh-My-ZSH
 ==========================
 
-Add this environment variable for your GitHub username
+Add this environment variable for your GitHub username (optional)
 
     typeset +gx -A GITHUB
     GITHUB[user]=dickeyxxx
@@ -75,5 +73,4 @@ Finally reload the `~/.zshrc` file:
 Go developers
 =============
 
-This follows the standard convention for Go projects so long as you have your
-`GOPATH` set to `~`
+This follows the standard convention for Go projects so long as you have your `GOPATH` set to `~`.
