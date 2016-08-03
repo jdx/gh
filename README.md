@@ -29,16 +29,21 @@ Dependencies
 
 * [Fish shell](http://fishshell.com/) ([interested in a bash version?](https://github.com/dickeyxxx/gh/issues)) OR [OH-MY-ZSH](http://ohmyz.sh/)
 
-
 Installation For Fish
 =====================
 
-Symlink (or copy) the function and completion files into `$fish_function_path` and `$fish_complete_path`
+Using [fisherman](https://github.com/fisherman/fisherman):
+
+```
+fisher dickeyxxx/gh
+```
+
+Alternatively, symlink (or copy) the function and completion files into `$fish_function_path` and `$fish_complete_path`
 
     mkdir -p ~/src/github.com/dickeyxxx
     git clone git@github.com:dickeyxxx/gh.git ~/src/github.com/dickeyxxx/gh
-    ln -s ~/src/github.com/dickeyxxx/gh/fish/functions/gh.fish ~/.config/fish/functions/gh.fish
-    ln -s ~/src/github.com/dickeyxxx/gh/fish/completions/gh.fish ~/.config/fish/completions/gh.fish
+    ln -s ~/src/github.com/dickeyxxx/gh/functions/gh.fish ~/.config/fish/functions/gh.fish
+    ln -s ~/src/github.com/dickeyxxx/gh/completions/gh.fish ~/.config/fish/completions/gh.fish
 
 Installation For Oh-My-ZSH
 ==========================
