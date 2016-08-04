@@ -24,10 +24,12 @@ It'll either just be a `cd` or it will clone `git@github.com:githubuser/githubre
 
 Note that tab completion is available for project and usernames.
 
-Dependencies
-============
+Supported Shells
+================
 
-* [Fish shell](http://fishshell.com/) ([interested in a bash version?](https://github.com/dickeyxxx/gh/issues)) OR [OH-MY-ZSH](http://ohmyz.sh/)
+* bash
+* [fish](http://fishshell.com/)
+* [OH-MY-ZSH](http://ohmyz.sh/)
 
 Installation For Fish
 =====================
@@ -74,6 +76,13 @@ plugins=(git brew meteor node npm osx redis-cli sublime gh)
 Finally reload the `~/.zshrc` file:
 
     source ~/.zshrc
+
+Installation for bash
+=====================
+
+```
+echo 'source ~/src/github.com/dickeyxxx/gh/functions/gh.bash' >> ~/.bashrc
+```
 
 Go developers
 =============
