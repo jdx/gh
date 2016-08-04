@@ -1,9 +1,9 @@
-function gh
-  set git_host github.com
+function bb
+  set git_host bitbucket.org
   set -l repo ""
 
   if [ (count $argv) -ne 2 ]
-    echo "USAGE: gh [user] [repo]"
+    echo "USAGE: bb [user] [repo]"
     return -1
   end
 
