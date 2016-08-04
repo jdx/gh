@@ -25,7 +25,7 @@ case $state in
         user_repo="gh_repos_$user"
         IFS=$'\n'
         if $GH_FETCH_REPOS = true && ( _cache_invalid $user_repo  || ! _retrieve_cache $user_repo ); then
-            repos=$(curl -s https://api.github.com/users/$user/repos)
+            repos=$(curl -s https://api.github.com/users/$user/repos\?sort=updated)
             _store_cache $user_repo repos
         else
             _retrieve_cache $user_repo
