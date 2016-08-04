@@ -1,15 +1,32 @@
-# Stil to be converted to zsh
+#compdef gh
+# vim: set ft=zsh:
 
-# function __gh_user_completion
-#   ls $HOME/src/github.com
-#   ls $HOME/src/github.com/$GITHUB
-# end
+local state line ret=1
 
-# function __gh_repo_completion
-#   set -l cmd (commandline -o)
-#   set -l user $cmd[2]
-#   ls $HOME/src/github.com/$user
-# end
+_arguments -C \
+    '1: :->user' \
+    '2:: :->repo' && ret=0
 
-# complete -c gh -n '__fish_is_token_n 2' --arguments '(__gh_user_completion)' --no-files
-# complete -c gh -n '__fish_is_token_n 3' --arguments '(__gh_repo_completion)' --no-files
+
+case $state in 
+    user)
+        _users=($GITHUB[user])
+        _users+=(${$(echo $HOME/src/github.com/*):r:t})
+        _users+=(${$(echo $HOME/src/github.com/$GITHUB/*):r:t})
+        if [ ${#_users[@]} -gt 0 ]
+        then
+            _values 'users' $_users
+            ret=0
+        fi
+        ;;
+    repo)
+        _repos=(${$(echo $HOME/src/github.com/$line[1]/*):r:t})
+        if [ ${#_repos[@]} -gt 0 ]
+        then
+            _values 'repos' $_repos
+            ret=0
+        fi
+        ;;
+esac
+
+return $ret
