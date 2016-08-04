@@ -1,6 +1,4 @@
 #compdef gh
-# vim: set ft=zsh:
-
 local state line ret=1
 
 GH_FETCH_REPOS=${GH_FETCH_REPOS:-false}
