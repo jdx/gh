@@ -84,6 +84,12 @@ Installation for bash
 echo 'source ~/src/github.com/dickeyxxx/gh/functions/gh.bash' >> ~/.bashrc
 ```
 
+GitHub Alternatives
+===================
+
+* bb - bitbucket (fish)
+* gl - gitlab (fish)
+
 Go developers
 =============
 
