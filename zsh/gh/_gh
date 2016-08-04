@@ -1,7 +1,7 @@
 #compdef gh
-# vim: set ft=zsh:
-
 local state line ret=1
+
+GH_FETCH_REPOS=${GH_FETCH_REPOS:-false}
 
 _arguments -C \
     '1: :->user' \
@@ -12,7 +12,7 @@ case $state in
     user)
         _users=($GITHUB[user])
         _users+=(${$(echo $HOME/src/github.com/*):r:t})
-        _users+=(${$(echo $HOME/src/github.com/$GITHUB/*):r:t})
+        _users+=(${$(echo $HOME/src/github.com/$GITHUB[user]/*):r:t})
         if [ ${#_users[@]} -gt 0 ]
         then
             _values 'users' $_users
@@ -20,7 +20,40 @@ case $state in
         fi
         ;;
     repo)
-        _repos=(${$(echo $HOME/src/github.com/$line[1]/*):r:t})
+        _repos=()
+        user=$line[1]
+        user_repo="gh_repos_$user"
+        IFS=$'\n'
+        if $GH_FETCH_REPOS = true && ( _cache_invalid $user_repo  || ! _retrieve_cache $user_repo ); then
+            repos=$(curl -s https://api.github.com/users/$user/repos)
+            _store_cache $user_repo repos
+        else
+            _retrieve_cache $user_repo
+        fi
+        IFS=$' '
+        if [ -n $repos ] && command -v jsawk > /dev/null 2>&1
+        then
+            javascript='return this.reduce(function(prev, cur, curI, array) {return prev + "\n" + cur.name + "[" + (!cur.description? cur.name + " has no description" : cur.description) + "]";}, "")'
+            _repos=(${(f)$(echo $repos | jsawk -a $javascript)})
+        fi
+        _local_repos=(${$(echo $HOME/src/github.com/$user/*):r:t})
+        for l in $_local_repos
+        do
+            exists=false
+            for r in $_repos 
+            do
+                if [[ $r == "$l"* ]]
+                then
+                    exists=true
+                    break 2
+                fi
+            done
+            if ! $exists
+            then
+                _repos+=( "$l" )
+            fi
+        done
+
         if [ ${#_repos[@]} -gt 0 ]
         then
             _values 'repos' $_repos
