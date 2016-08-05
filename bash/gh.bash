@@ -1,3 +1,4 @@
+GH_BASE_DIR=${GH_BASE_DIR:-$HOME/src}
 function gh() {
   if [[ $# -ne 2 ]]; then
     echo "USAGE: gh [user] [repo]"
@@ -7,7 +8,7 @@ function gh() {
   user=$1
   repo=$2
 
-  user_path=$HOME/src/github.com/$user
+  user_path=$GH_BASE_DIR/github.com/$user
   local_path=$user_path/$repo
 
   if [[ ! -d $local_path ]]; then

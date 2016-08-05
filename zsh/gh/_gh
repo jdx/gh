@@ -2,6 +2,7 @@
 local state line ret=1
 
 GH_FETCH_REPOS=${GH_FETCH_REPOS:-false}
+GH_BASE_DIR=${GH_BASE_DIR:-$HOME/src}
 
 _arguments -C \
     '1: :->user' \
@@ -11,8 +12,8 @@ _arguments -C \
 case $state in 
     user)
         _users=($GITHUB[user])
-        _users+=(${$(echo $HOME/src/github.com/*):r:t})
-        _users+=(${$(echo $HOME/src/github.com/$GITHUB[user]/*):r:t})
+        _users+=(${$(echo $GH_BASE_DIR/github.com/*):r:t})
+        _users+=(${$(echo $GH_BASE_DIR/github.com/$GITHUB[user]/*):r:t})
         if [ ${#_users[@]} -gt 0 ]
         then
             _values 'users' $_users
@@ -36,7 +37,7 @@ case $state in
             javascript='return this.reduce(function(prev, cur, curI, array) {return prev + "\n" + cur.name + "[" + (!cur.description? cur.name + " has no description" : cur.description) + "]";}, "")'
             _repos=(${(f)$(echo $repos | jsawk -a $javascript)})
         fi
-        _local_repos=(${$(echo $HOME/src/github.com/$user/*):r:t})
+        _local_repos=(${$(echo $GH_BASE_DIR/github.com/$user/*):r:t})
         for l in $_local_repos
         do
             exists=false
