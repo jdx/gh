@@ -1,4 +1,6 @@
 #compdef gh
+# vim: set ft=zsh:
+
 local state line ret=1
 
 GH_FETCH_REPOS=${GH_FETCH_REPOS:-false}
@@ -26,13 +28,13 @@ case $state in
         user_repo="gh_repos_$user"
         IFS=$'\n'
         if $GH_FETCH_REPOS = true && ( _cache_invalid $user_repo  || ! _retrieve_cache $user_repo ); then
-            repos=$(curl -s https://api.github.com/users/$user/repos\?sort=updated)
+            repos=$(curl --fail -s https://api.github.com/users/$user/repos\?sort=updated)
             _store_cache $user_repo repos
         else
             _retrieve_cache $user_repo
         fi
         IFS=$' '
-        if [ -n $repos ] && command -v jsawk > /dev/null 2>&1
+        if [ -n "$repos" ] && command -v jsawk > /dev/null 2>&1
         then
             javascript='return this.reduce(function(prev, cur, curI, array) {return prev + "\n" + cur.name + "[" + (!cur.description? cur.name + " has no description" : cur.description) + "]";}, "")'
             _repos=(${(f)$(echo $repos | jsawk -a $javascript)})
