@@ -56,15 +56,15 @@ Add this environment variable for your GitHub username (optional)
     GITHUB[user]=dickeyxxx
 
 Then symlink (or copy) the gh folder into your Oh-My-ZSH plugins folder
-    
+
     ln -s ~/src/github.com/dickeyxxx/gh/zsh/gh ~/.oh-my-zsh/custom/plugins/gh
 
 Next add the plugin to your `~/.zshrc` file
-    
+
     plugins=(gh)
 
 For example:
-    
+
 ```
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -76,6 +76,10 @@ plugins=(git brew meteor node npm osx redis-cli sublime gh)
 Finally reload the `~/.zshrc` file:
 
     source ~/.zshrc
+
+The zsh autocompletion supports loading a user's repositories from github. For that to work, you need to set the environment variable `GH_FETCH_REPOS` to true. You will also need to install [jsawk](https://github.com/micha/jsawk) for it to work.
+
+If you now type `gh someusername` and then press `<Tab>`, it will load that user's repositories from github and display them to you.
 
 Installation for bash
 =====================
