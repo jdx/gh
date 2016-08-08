@@ -86,6 +86,7 @@ Installation for bash
 
 ```
 echo 'source ~/src/github.com/dickeyxxx/gh/bash/gh.bash' >> ~/.bashrc
+echo 'source ~/src/github.com/dickeyxxx/gh/completions/gh.bash' >> ~/.bashrc
 ```
 
 GitHub Alternatives
