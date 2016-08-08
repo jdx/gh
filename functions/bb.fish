@@ -1,3 +1,4 @@
+GH_BASE_DIR=${GH_BASE_DIR:-$HOME/src}
 function bb
   set git_host bitbucket.org
   set -l repo ""
@@ -10,7 +11,7 @@ function bb
   set user $argv[1]
   set repo $argv[2]
 
-  set -l path $HOME/src/$git_host/$user/$repo
+  set -l path $GH_BASE_DIR/$git_host/$user/$repo
   if not test -d $path
     git clone git@$git_host:$user/$repo.git $path
   end

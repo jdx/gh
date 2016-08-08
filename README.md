@@ -24,6 +24,14 @@ It'll either just be a `cd` or it will clone `git@github.com:githubuser/githubre
 
 Note that tab completion is available for project and usernames.
 
+## Changing the base directory
+`gh` will clone or `cd` into `$GH_BASE_DIR/github.com/user/repo`.
+By default `$GH_BASE_DIR` points to `$HOME/src`. By changing the `$GH_BASE_DIR` variable in your shell's config file, you can control where `gh` will clone/`cd` into.
+
+**Note:** Already cloned repos will not be transferred to the new location, they will be cloned again.
+
+**More important Note:** Do not use the tilde-character (`~`) in `$GH_BASE_DIR`, use `$HOME` instead.
+
 Supported Shells
 ================
 

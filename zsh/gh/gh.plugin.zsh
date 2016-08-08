@@ -1,5 +1,6 @@
 #Github repo switcher
 
+GH_BASE_DIR=${GH_BASE_DIR:-$HOME/src}
 function gh () {
   typeset +x account=$GITHUB[user]
   typeset +x repo=""
@@ -14,7 +15,7 @@ function gh () {
     return 127
   fi
 
-  typeset +x directory=$HOME/src/github.com/$account/$repo
+  typeset +x directory=$GH_BASE_DIR/github.com/$account/$repo
   if [[ ! -a $directory ]]; then
     git clone git@github.com:$account/$repo.git $directory
     if [[ ! -a $directory ]]; then
