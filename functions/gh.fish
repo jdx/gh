@@ -1,4 +1,7 @@
-GH_BASE_DIR=${GH_BASE_DIR:-$HOME/src}
+if not set -q GH_BASE_DIR
+    set GH_BASE_DIR $HOME/src
+end
+
 function gh
   set git_host github.com
   set -l repo ""

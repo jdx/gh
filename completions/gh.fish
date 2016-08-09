@@ -1,4 +1,7 @@
-GH_BASE_DIR=${GH_BASE_DIR:-$HOME/src}
+if not set -q GH_BASE_DIR
+    set GH_BASE_DIR $HOME/src
+end
+
 function __gh_user_completion
   ls $GH_BASE_DIR/github.com
   ls $GH_BASE_DIR/github.com/$GITHUB
