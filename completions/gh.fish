@@ -4,7 +4,6 @@ end
 
 function __gh_user_completion
   ls $GH_BASE_DIR/github.com
-  ls $GH_BASE_DIR/github.com/$GITHUB
 end
 
 function __gh_repo_completion
