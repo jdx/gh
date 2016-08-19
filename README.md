@@ -38,6 +38,15 @@ Supported Shells
 * bash
 * [fish](http://fishshell.com/)
 * [OH-MY-ZSH](http://ohmyz.sh/)
+* zsh
+
+Installation for bash
+=====================
+
+```
+echo 'source ~/src/github.com/dickeyxxx/gh/bash/gh.bash' >> ~/.bashrc
+echo 'source ~/src/github.com/dickeyxxx/gh/completions/gh.bash' >> ~/.bashrc
+```
 
 Installation For Fish
 =====================
@@ -89,12 +98,17 @@ The zsh autocompletion supports loading a user's repositories from github. For t
 
 If you now type `gh someusername` and then press `<Tab>`, it will load that user's repositories from github and display them to you.
 
-Installation for bash
-=====================
-
+Installation for zsh
+==========================
+Zsh supports bash autocomplete. You can add the following to your .zshrc but make sure you have `compinit` done first.
 ```
-echo 'source ~/src/github.com/dickeyxxx/gh/bash/gh.bash' >> ~/.bashrc
-echo 'source ~/src/github.com/dickeyxxx/gh/completions/gh.bash' >> ~/.bashrc
+compinit
+...
+# bash completion and gh
+autoload bashcompinit
+bashcompinit
+source ~/src/github.com/dickeyxxx/gh/bash/gh.bash
+source ~/src/github.com/dickeyxxx/gh/completions/gh.bash
 ```
 
 GitHub Alternatives
