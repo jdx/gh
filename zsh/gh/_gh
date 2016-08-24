@@ -42,16 +42,16 @@ case $state in
         _local_repos=(${$(echo $GH_BASE_DIR/github.com/$user/*):r:t})
         for l in $_local_repos
         do
-            exists=false
+            exists=1
             for r in $_repos 
             do
                 if [[ $r == "$l"* ]]
                 then
-                    exists=true
-                    break 2
+                    exists=0
+                    break 1
                 fi
             done
-            if ! $exists
+            if [ $exists -ne 0 ]
             then
                 _repos+=( "$l" )
             fi
