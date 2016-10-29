@@ -8,11 +8,12 @@ function gh() {
   user=$1
   repo=$2
 
-  user_path=$GH_BASE_DIR/github.com/$user
+  user_path=$GH_BASE_DIR/$user
   local_path=$user_path/$repo
 
   if [[ ! -d $local_path ]]; then
-    git clone git@github.com:$user/$repo.git $local_path
+    git clone git@github.com:$user/$repo.git $local_path ||
+    git clone https://github.com/$user/$repo.git $local_path
   fi
 
   # If git exited uncleanly, clean up the created user directory (if exists)
