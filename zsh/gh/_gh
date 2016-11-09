@@ -4,7 +4,7 @@
 local state line ret=1
 
 GH_FETCH_REPOS=${GH_FETCH_REPOS:-false}
-GH_BASE_DIR=${GH_BASE_DIR:-$HOME/src}
+GH_BASE_DIR=${GH_BASE_DIR:-$HOME/Github}
 
 _arguments -C \
     '1: :->user' \
@@ -14,8 +14,8 @@ _arguments -C \
 case $state in 
     user)
         _users=($GITHUB[user])
-        _users+=(${$(echo $GH_BASE_DIR/github.com/*):r:t})
-        _users+=(${$(echo $GH_BASE_DIR/github.com/$GITHUB[user]/*):r:t})
+        _users+=(${$(echo $GH_BASE_DIR/*):r:t})
+        _users+=(${$(echo $GH_BASE_DIR/$GITHUB[user]/*):r:t})
         if [ ${#_users[@]} -gt 0 ]
         then
             _values 'users' $_users
