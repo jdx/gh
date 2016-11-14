@@ -1,5 +1,5 @@
 GH_BASE_DIR=${GH_BASE_DIR:-$HOME/src}
-GH_PROTO=${GH_PROTO:-"https"}
+GH_PROTO=${GH_PROTO:-"ssh"}
 function gh() {
   if [[ $# -ne 2 ]]; then
     echo "USAGE: gh [user] [repo]"

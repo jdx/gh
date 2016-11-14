@@ -1,7 +1,7 @@
 #Github repo switcher
 
 GH_BASE_DIR=${GH_BASE_DIR:-$HOME/src}
-GH_PROTO=${GH_PROTO:-"https"}
+GH_PROTO=${GH_PROTO:-"ssh"}
 function gh () {
   typeset +x account=$GITHUB[user]
   typeset +x repo=""
@@ -15,7 +15,6 @@ function gh () {
     echo "USAGE: gh [user] [repo]"
     return 127
   fi
-  
   typeset +x directory=$GH_BASE_DIR/github.com/$account/$repo
   if [[ ! -a $directory ]]; then
    if [[ $GH_PROTO == "ssh" ]]; then 
