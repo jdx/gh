@@ -44,8 +44,8 @@ Installation for bash
 =====================
 
 ```
-echo 'source ~/src/github.com/dickeyxxx/gh/bash/gh.bash' >> ~/.bashrc
-echo 'source ~/src/github.com/dickeyxxx/gh/completions/gh.bash' >> ~/.bashrc
+echo 'source ~/src/github.com/jdxcode/gh/bash/gh.bash' >> ~/.bashrc
+echo 'source ~/src/github.com/jdxcode/gh/completions/gh.bash' >> ~/.bashrc
 ```
 
 Installation For Fish
@@ -54,15 +54,15 @@ Installation For Fish
 Using [fisherman](https://github.com/fisherman/fisherman):
 
 ```
-fisher dickeyxxx/gh
+fisher jdxcode/gh
 ```
 
 Alternatively, symlink (or copy) the function and completion files into `$fish_function_path` and `$fish_complete_path`
 
-    mkdir -p ~/src/github.com/dickeyxxx
-    git clone git@github.com:dickeyxxx/gh.git ~/src/github.com/dickeyxxx/gh
-    ln -s ~/src/github.com/dickeyxxx/gh/functions/gh.fish ~/.config/fish/functions/gh.fish
-    ln -s ~/src/github.com/dickeyxxx/gh/completions/gh.fish ~/.config/fish/completions/gh.fish
+    mkdir -p ~/src/github.com/jdxcode
+    git clone git@github.com:jdxcode/gh.git ~/src/github.com/jdxcode/gh
+    ln -s ~/src/github.com/jdxcode/gh/functions/gh.fish ~/.config/fish/functions/gh.fish
+    ln -s ~/src/github.com/jdxcode/gh/completions/gh.fish ~/.config/fish/completions/gh.fish
 
 Installation For Oh-My-ZSH
 ==========================
@@ -70,11 +70,11 @@ Installation For Oh-My-ZSH
 Add this environment variable for your GitHub username (optional)
 
     typeset +gx -A GITHUB
-    GITHUB[user]=dickeyxxx
+    GITHUB[user]=jdxcode
 
 Then symlink (or copy) the gh folder into your Oh-My-ZSH plugins folder
 
-    ln -s ~/src/github.com/dickeyxxx/gh/zsh/gh ~/.oh-my-zsh/custom/plugins/gh
+    ln -s ~/src/github.com/jdxcode/gh/zsh/gh ~/.oh-my-zsh/custom/plugins/gh
 
 Next add the plugin to your `~/.zshrc` file
 
@@ -107,8 +107,8 @@ compinit
 # bash completion and gh
 autoload bashcompinit
 bashcompinit
-source ~/src/github.com/dickeyxxx/gh/bash/gh.bash
-source ~/src/github.com/dickeyxxx/gh/completions/gh.bash
+source ~/src/github.com/jdxcode/gh/bash/gh.bash
+source ~/src/github.com/jdxcode/gh/completions/gh.bash
 ```
 
 GitHub Alternatives

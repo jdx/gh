@@ -4,7 +4,7 @@
   "description": "github project locator/downloader",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dickeyxxx/gh.git"
+    "url": "https://github.com/jdxcode/gh.git"
   },
   "keywords": [
     "fish"
@@ -12,7 +12,7 @@
   "author": "@dickeyxxx",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/dickeyxxx/gh/issues"
+    "url": "https://github.com/jdxcode/gh/issues"
   },
-  "homepage": "https://github.com/dickeyxxx/gh"
+  "homepage": "https://github.com/jdxcode/gh"
 }
