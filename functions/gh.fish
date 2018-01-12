@@ -17,6 +17,7 @@ function gh
   set -l path $GH_BASE_DIR/$git_host/$user/$repo
   if not test -d $path
     git clone git@$git_host:$user/$repo.git $path
+    cd $path; and git branch --set-upstream-to=origin/master master
   end
 
   cd $path
