@@ -11,6 +11,20 @@ Here is a demo of me moving around various projects
 
 ![demo](demo.gif)
 
+<!-- toc -->
+
+- [Usage](#usage)
+  * [Changing the base directory](#changing-the-base-directory)
+- [Supported Shells](#supported-shells)
+- [Installation for bash](#installation-for-bash)
+- [Installation For Fish](#installation-for-fish)
+- [Installation For Oh-My-ZSH](#installation-for-oh-my-zsh)
+- [Installation for zsh](#installation-for-zsh)
+- [GitHub Alternatives](#github-alternatives)
+- [Go developers](#go-developers)
+
+<!-- tocstop -->
+
 Usage
 =====
 
@@ -50,6 +64,12 @@ echo 'source ~/src/github.com/jdxcode/gh/completions/gh.bash' >> ~/.bashrc
 
 Installation For Fish
 =====================
+
+Using [oh-my-fish](https://github.com/oh-my-fish/oh-my-fish):
+
+```
+omf install https://github.com/jdxcode/gh
+```
 
 Using [fisherman](https://github.com/fisherman/fisherman):
 
