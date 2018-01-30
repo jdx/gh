@@ -68,7 +68,7 @@ Installation For Fish
 Using [oh-my-fish](https://github.com/oh-my-fish/oh-my-fish):
 
 ```
-omf install https://github.com/jdxcode/gh
+omf install gh
 ```
 
 Using [fisherman](https://github.com/fisherman/fisherman):
