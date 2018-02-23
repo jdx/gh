@@ -1,5 +1,3 @@
-GH_BASE_DIR=${GH_BASE_DIR:-$HOME/src}
-
 # Add this to your .bashrc
 _complete_gh ()
 {
