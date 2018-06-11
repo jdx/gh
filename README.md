@@ -135,7 +135,7 @@ GitHub Alternatives
 ===================
 
 * bb - bitbucket (fish)
-* gl - gitlab (fish)
+* gl - gitlab (fish, bash)
 
 Go developers
 =============
