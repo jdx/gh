@@ -15,7 +15,7 @@ end
 function __gh_remote_repos_cached --argument user
   set -l cache_path GH_REPOS_CACHE_$user
   if not set -q $cache_path
-    set -U $cache_path (__gh_remote_repos $user)
+    set -g $cache_path (__gh_remote_repos $user)
   end
   string join \n $$cache_path
 end
