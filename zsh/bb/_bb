@@ -1,0 +1,69 @@
+#compdef bb
+# vim: set ft=zsh:
+
+local state line ret=1
+
+GH_FETCH_REPOS=${GH_FETCH_REPOS:-false}
+GH_BASE_DIR=${GH_BASE_DIR:-$HOME/src}
+
+_arguments -C \
+    '1: :->user' \
+    '2:: :->repo' && ret=0
+
+case $state in 
+    user)
+        _users=($BITBUCKET[user])
+        _users+=(${$(echo $GH_BASE_DIR/bitbucket.org/*):r:t})
+        _users+=(${$(echo $GH_BASE_DIR/bitbucket.org/$BITBUCKET[user]/*):r:t})
+        if [ ${#_users[@]} -gt 0 ]
+        then
+            _values 'users' $_users
+            ret=0
+        fi
+        ;;
+    repo)
+        _repos=()
+        user=$line[1]
+        user_repo="bb_repos_$user"
+        IFS=$'\n'
+        if $GH_FETCH_REPOS = true && ( _cache_invalid $user_repo  || ! _retrieve_cache $user_repo ); then
+            # Bitbucket often requires authentication. See OAuth2 docs:
+            # https://confluence.atlassian.com/bitbucket/oauth-on-bitbucket-cloud-238027431.html
+            repos=$(curl --fail -s https://api.bitbucket.org/2.0/repositories/$user)
+            _store_cache $user_repo repos
+        else
+            _retrieve_cache $user_repo
+        fi
+        IFS=$' '
+        if [ -n "$repos" ] && command -v jsawk > /dev/null 2>&1
+        then
+            javascript='return this.values.reduce(function(prev, cur, curI, array) {return prev + "\n" + cur.name + "[" + (!cur.description? cur.name + " has no description" : cur.description) + "]";}, "")'
+            _repos=(${(f)$(echo $repos | jsawk -a $javascript)})
+        fi
+        _local_repos=(${$(echo $GH_BASE_DIR/bitbucket.org/$user/*):r:t})
+        for l in $_local_repos
+        do
+            exists=1
+            for r in $_repos 
+            do
+                if [[ $r == "$l"* ]]
+                then
+                    exists=0
+                    break 1
+                fi
+            done
+            if [ $exists -ne 0 ]
+            then
+                _repos+=( "$l" )
+            fi
+        done
+
+        if [ ${#_repos[@]} -gt 0 ]
+        then
+            _values 'repos' $_repos
+            ret=0
+        fi
+        ;;
+esac
+
+return $ret

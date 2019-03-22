@@ -118,6 +118,24 @@ The zsh autocompletion supports loading a user's repositories from github. For t
 
 If you now type `gh someusername` and then press `<Tab>`, it will load that user's repositories from github and display them to you.
 
+Note that, if autocompletion isn't working, then you probably need to make zsh refresh the completions dumpfile. Just remove the `$HOME/.zcompdump-*` file:
+
+    rm $HOME/.zcompdump-*
+
+and reload the `~/.zshrc` again to regenerate it.
+
+For the `bb` (bitbucket) equivalent, repeat the above instructions, but substitute `gh` with `bb`, i.e.:
+
+    ln -s ~/src/github.com/jdxcode/gh/zsh/bb ~/.oh-my-zsh/custom/plugins/bb
+    plugins=(gh bb)
+    source ~/.zshrc
+
+As before for `GITHUB` environment variable, the environment variable `BITBUCKET` is optional:
+
+    typeset +gx -A BITBUCKET
+    BITBUCKET[user]=jdxcode
+
+
 Installation for zsh
 ==========================
 Zsh supports bash autocomplete. You can add the following to your .zshrc but make sure you have `compinit` done first.
