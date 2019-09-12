@@ -33,7 +33,7 @@ function __bb_repo_completion
   set -l cmd (commandline -o)
   set -l user $cmd[2]
   set -l repos (__bb_local_repos $user) (__bb_remote_repos_cached $user)
-  string join \n $repos | sort | uniq -du
+  string join \n $repos | sort | uniq -u
 end
 
 complete -c bb -n '__fish_is_token_n 2' --arguments '(__bb_user_completion)' --no-files
