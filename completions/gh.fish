@@ -33,7 +33,7 @@ function __gh_repo_completion
   set -l cmd (commandline -o)
   set -l user $cmd[2]
   set -l repos (__gh_local_repos $user) (__gh_remote_repos_cached $user)
-  string join \n $repos | sort | uniq -du
+  string join \n $repos | sort | uniq -u
 end
 
 complete -c gh -n '__fish_is_token_n 2' --arguments '(__gh_user_completion)' --no-files
