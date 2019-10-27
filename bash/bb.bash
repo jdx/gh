@@ -14,7 +14,7 @@ function bb() {
 
   if [[ ! -d $local_path ]]; then
      if [[ $GH_PROTO == "ssh" ]]; then 
-      git clone git@bitbucket.org:$user/$repo.git $local_path
+      git clone --recursive git@bitbucket.org:$user/$repo.git $local_path
      else
       echo "GH_PROTO must be set to ssh"
     fi

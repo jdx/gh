@@ -14,9 +14,9 @@ function gh() {
 
   if [[ ! -d $local_path ]]; then
      if [[ $GH_PROTO == "ssh" ]]; then 
-      git clone git@github.com:$user/$repo.git $local_path
+      git clone --recursive git@github.com:$user/$repo.git $local_path
      elif [[ $GH_PROTO == "https" ]]; then
-      git clone https://github.com/$user/$repo.git $local_path
+      git clone --recursive https://github.com/$user/$repo.git $local_path
      else
       echo "GH_PROTO must be set to ssh or https"
     fi
