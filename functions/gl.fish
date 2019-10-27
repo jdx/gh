@@ -16,7 +16,7 @@ function gl
 
   set -l path $GL_BASE_DIR/$git_host/$user/$repo
   if not test -d $path
-    git clone git@$git_host:$user/$repo.git $path
+    git clone --recursive git@$git_host:$user/$repo.git $path
   end
 
   cd $path

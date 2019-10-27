@@ -18,9 +18,9 @@ function gh () {
   typeset +x directory=$GH_BASE_DIR/github.com/$account/$repo
   if [[ ! -a $directory ]]; then
    if [[ $GH_PROTO == "ssh" ]]; then 
-      git clone git@github.com:$account/$repo.git $directory
+      git clone --recursive git@github.com:$account/$repo.git $directory
      elif [[ $GH_PROTO == "https" ]]; then
-      git clone https://github.com/$account/$repo.git $directory
+      git clone --recursive https://github.com/$account/$repo.git $directory
      else
       echo "GH_PROTO must be set to ssh or https"
     fi

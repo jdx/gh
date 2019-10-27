@@ -18,7 +18,7 @@ function bb () {
   typeset +x directory=$GH_BASE_DIR/bitbucket.org/$account/$repo
   if [[ ! -a $directory ]]; then
    if [[ $GH_PROTO == "ssh" ]]; then 
-      git clone git@bitbucket.org:$account/$repo.git $directory
+      git clone --recursive git@bitbucket.org:$account/$repo.git $directory
      else
       echo "GH_PROTO must be set to ssh"
     fi

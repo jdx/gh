@@ -14,9 +14,9 @@ function gl() {
 
   if [[ ! -d $local_path ]]; then
      if [[ $GH_PROTO == "ssh" ]]; then 
-      git clone git@gitlab.com:$user/$repo.git $local_path
+      git clone --recursive git@gitlab.com:$user/$repo.git $local_path
      elif [[ $GH_PROTO == "https" ]]; then
-      git clone https://gitlab.com/$user/$repo.git $local_path
+      git clone --recursive https://gitlab.com/$user/$repo.git $local_path
      else
       echo "GH_PROTO must be set to ssh or https"
     fi
