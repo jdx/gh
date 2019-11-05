@@ -77,6 +77,13 @@ Using [fisherman](https://github.com/fisherman/fisherman):
 fisher jdxcode/gh
 ```
 
+Using [fundle](https://github.com/danhper/fundle), add this to your config:
+
+```
+fundle plugin jdxcode/gh
+```
+
+
 Alternatively, symlink (or copy) the function and completion files into `$fish_function_path` and `$fish_complete_path`
 
     mkdir -p ~/src/github.com/jdxcode
