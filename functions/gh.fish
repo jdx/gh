@@ -1,6 +1,13 @@
 if not set -q GH_BASE_DIR
     set GH_BASE_DIR $HOME/src
 end
+# Resolve minor bug in issue #44.
+## https://github.com/jdxcode/gh/issues/44
+if test "/" = (string sub --start -1 --length 1 $GH_BASE_DIR)
+  set -l length (string length $GH_BASE_DIR)
+  set -l length (math -- $length - 1)
+  set -x GH_BASE_DIR (string sub --length $length $GH_BASE_DIR)
+end
 
 function gh -d "manage git repos"
   set git_host github.com
